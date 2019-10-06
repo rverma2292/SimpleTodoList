@@ -5,8 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+   
 </head>
 <body>
+    <!-- define name -->
     <h1>Todolist</h1>
+    <!-- creating form -->
+    <form id="todoform">
+        <input id="todoinput" type="text">
+        <button type="button" id="todo_btn" onclick="todolist()">Add Task</button>
+    </form>
+    <!-- order list -->
+    <ol id="todolist">        
+    </ol>
+    <!-- created function -->
+    <script>
+        function todolist(){
+            var item = document.getElementById('todoinput').value
+            if(item!=""){
+                var text = document.createTextNode(item)            
+                var newItem = document.createElement("li")
+                newItem.appendChild(text)
+                document.getElementById("todolist").appendChild(newItem)    
+            }            
+        }        
+    </script>
 </body>
 </html>
